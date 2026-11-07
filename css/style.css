@@ -1,0 +1,446 @@
+/* style.css
+ /* Styles for all three pages */
+
+/*  Properties */
+:root {
+  --dark: hsl(248, 70%, 10%);
+  --white: hsl(0, 0%, 100%);
+  --grey: hsl(252, 6%, 83%);
+  --grey-dark: hsl(245, 15%, 58%);
+  --teal: hsl(174, 70%, 50%);
+  --teal-dark: hsl(174, 70%, 40%);
+  --glass: rgba(255, 255, 255, 0.1);
+  --radius: 12px;
+  --title-size: clamp(1.8rem, 5vw, 3.5rem);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.1rem;
+  color: var(--white);
+  background-color: var(--dark);
+  background-image: url("../assets/images/background-mobile.png");
+  background-size: cover;
+  min-height: 100vh;
+}
+
+/*  resets the  margins  */
+:where(h1, h2, h3, p) {
+  margin-top: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+main {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Position*/
+.decor {
+  position: absolute;
+  z-index: -1;
+}
+
+.decor-circle {
+  top: -40px;
+  left: -40px;
+  width: 150px;
+}
+
+.decor-squiggle {
+  top: 20px;
+  right: 0;
+  width: 120px;
+}
+
+/*Header and footer */
+.site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.logo {
+  width: 160px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: var(--grey);
+  text-decoration: none;
+}
+
+/* :is() styles hover and the active page */
+nav a:is(:hover, .active) {
+  color: var(--teal);
+}
+
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  color: var(--grey);
+  font-size: 0.9rem;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 30px 0;
+}
+
+h1 {
+  font-size: var(--title-size);
+  font-weight: 800;
+}
+
+.subtitle {
+  color: var(--grey);
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+/* Gradient text*/
+.gradient-text {
+  background: linear-gradient(90deg, var(--teal), var(--white));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.teal {
+  color: var(--teal);
+}
+
+
+:is(.logo, .ticket-logo, .about-img, #preview) {
+  filter: hue-rotate(160deg);
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 30px;
+  border: none;
+  border-radius: var(--radius);
+  background-color: var(--teal);
+  color: var(--dark);
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--teal-dark);
+  transform: translateY(-3px);
+}
+
+:is(a, input, button):focus-visible {
+  outline: 3px solid var(--grey);
+  outline-offset: 3px;
+}
+
+/* Home page  */
+.event-info {
+  padding: 12px 20px;
+  border: 1px solid var(--grey-dark);
+  border-radius: var(--radius);
+  background: var(--glass);
+}
+
+.about {
+  padding: 30px 0;
+}
+
+.about-img {
+  float: right;
+  width: 80px;
+  margin: 0 0 10px 20px;
+}
+
+.about p {
+  color: var(--grey);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  clear: both;
+}
+
+.card {
+  padding: 20px;
+  border: 1px solid var(--grey-dark);
+  border-radius: var(--radius);
+  background: var(--glass);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  color: var(--teal);
+}
+
+/* Schedule */
+.schedule li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--grey-dark);
+}
+
+.schedule li:last-child {
+  border-bottom: none;
+}
+
+.schedule strong {
+  color: var(--teal);
+}
+
+/* Form page*/
+form {
+  width: 100%;
+  max-width: 460px;
+  text-align: left;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+}
+
+/* :not() every input that is not of the type file*/
+input:not([type="file"]) {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid var(--grey-dark);
+  border-radius: var(--radius);
+  background: var(--glass);
+  color: var(--white);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input::placeholder {
+  color: var(--grey);
+}
+
+.upload-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  border: 2px dashed var(--grey-dark);
+  border-radius: var(--radius);
+  background: var(--glass);
+}
+
+#preview {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.hint {
+  margin: 8px 0 0;
+  font-size: 0.8rem;
+  color: var(--grey);
+}
+
+.error {
+  margin: 8px 0 0;
+  font-size: 0.85rem;
+  color: var(--teal);
+}
+
+
+.field:has(.error:not(:empty)) :is(input, .upload-box) {
+  border-color: var(--teal);
+}
+
+form .btn {
+  width: 100%;
+}
+
+/*  Ticket page */
+.ticket {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 30px;
+  padding: 16px 70px 16px 16px;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: popIn 0.8s ease-out;
+}
+
+.ticket-top,
+.ticket-person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ticket-top {
+  margin-bottom: 30px;
+}
+
+.ticket-top h2 {
+  margin: 0;
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+}
+
+.ticket-logo {
+  width: 32px;
+}
+
+.ticket-date {
+  margin: 0;
+  color: var(--grey);
+  font-size: 0.9rem;
+}
+
+.ticket-avatar {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.ticket-name {
+  margin: 0;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+}
+
+.ticket-person a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--grey);
+  text-decoration: none;
+}
+
+.ticket-person a:hover {
+  color: var(--teal);
+}
+
+.github-icon {
+  width: 20px;
+}
+
+/* Ticket serial number that is displayed at the right */
+.ticket-serial {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 55px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 2px dashed var(--grey-dark);
+  writing-mode: vertical-rl;
+  font-size: 1.2rem;
+  color: var(--grey-dark);
+}
+
+/*  Animation */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Turn animations off for users who ask for less motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Tablet and desktop (768px +) */
+@media (min-width: 768px) {
+  body {
+    background-image: url("../assets/images/background-desktop.png");
+  }
+
+  .site-header {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .decor-circle {
+    width: 220px;
+  }
+
+  .decor-squiggle {
+    top: 80px;
+    width: 300px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about-img {
+    width: 120px;
+  }
+
+  .ticket {
+    padding: 24px 100px 24px 24px;
+  }
+
+  .ticket-logo {
+    width: 40px;
+  }
+
+  .ticket-avatar {
+    width: 90px;
+    height: 90px;
+  }
+
+  .ticket-serial {
+    width: 80px;
+    font-size: 1.6rem;
+  }
+}

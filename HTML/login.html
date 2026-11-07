@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--
+   Rochelle Mills (2301557) |  Registration form  for Coding Conf that is validated by validation.js
+    -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Register for Coding Conf 2026 and receive your ticket" />
+    <title>Coding Conf 2026 | Register</title>
+    <link rel="icon" href="../assets/images/favicon-32x32.png" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+   <!-- Background decorations -->
+  <body>
+    <img class="decor decor-circle" src="../assets/images/pattern-circle.svg" alt="" />
+    <img class="decor decor-squiggle" src="../assets/images/pattern-squiggly-line-top.svg" alt="" />
+
+    <header class="site-header">
+      <img src="../assets/images/logo-full.svg" alt="Coding Conf logo" class="logo" />
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="login.html" class="active">Register</a>
+      </nav>
+    </header>  
+	   <!-- Form registration input -->
+
+<main>
+<section class="hero">
+<h1>Broadening your horizons with Coding Conf 2026 begins here!</h1>
+<p class="subtitle">Secure your spot and future at Jamaica's number 1 coding conference.</p>
+<!-- Fields for user to input information that will be validated by validation.js -->
+<form id="registerForm" novalidate>
+<div class="field">
+<label for="avatar">Upload Avatar</label>
+<div class="upload-box">
+<img id="preview" src="../assets/images/icon-upload.svg"
+alt="Upload icon" />
+<input type="file" id="avatar" accept="image/jpeg, image/png"
+/>
+</div>
+<p class="hint">JPG or PNG maximum size of 500KB.</p>
+<p class="error" id="avatarError"></p>
+</div>
+
+<div class="field">
+<label for="fullName">Full Name</label>
+<input type="text" id="fullName" />
+<p class="error" id="nameError"></p>
+</div>
+<div class="field">
+<label for="email">Email Address</label>
+<input type="email" id="email" placeholder="name@email.com" />
+<p class="error" id="emailError"></p>
+</div>
+<div class="field">
+<label for="github">GitHub Username</label>
+<input type="text" id="github" placeholder="@yourusername" />
+<p class="error" id="githubError"></p>
+</div>
+<button type="submit" class="btn">Generate My Ticket</button>
+</form>
+</section>
+</main>
+<script src="../js/validation.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 
+ticket.html (2301557) - Rochelle A Mills|  Creates the ticket and displays confirmation information
+-->
+<meta charset="UTF-8"/>
+<meta name= "viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Confirm your Coding Conf 2026 Tickets"/>
+	<title>Coding Conf 2026 | Ticket</title>
+	<link rel="icon" href="../assets/images/favicon-32x32.png" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  
+  <body>
+    <img class="decor decor-circle" src="../assets/images/pattern-circle.svg" alt="" />
+    <img class="decor decor-squiggle" src="../assets/images/pattern-squiggly-line-top.svg" alt="" />
+
+    <header class="site-header">
+      <img src="../assets/images/logo-full.svg" alt="Coding Conf logo" class="logo" />
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="login.html">Register</a>
+      </nav>
+    </header>
+	<main>
+<section class="hero">
+<h1>Congrats, <span class="gradient-text" id="bannerName"></span>!
+Your ticket is ready.</h1>
+<p class="subtitle">
+Ticket is emailed to  <span class="teal" id="bannerEmail">
+</span>
+and all updates on the event will be sent.
+</p>
+<!-- Ticket -->
+<article class="ticket">
+<div class="ticket-top">
+<img src="../assets/images/logo-mark.svg" alt="Coding Conf icon"
+class="ticket-logo" />
+<div>
+<h2>Coding Conf 2026</h2>
+<p class="ticket-date">Oct 26, 2026 | Papine, Kgn</p>
+</div>
+</div>
+<div class="ticket-person">
+<img id="ticketAvatar" src="../assets/images/image-avatar.jpg"
+alt="Attendee photo" class="ticket-avatar" />
+<div>
+<p class="ticket-name" id="ticketName"></p>
+<a id="ticketGithub" href="#" target="_blank">
+<img src="../assets/images/icon-github.svg" alt=""
+class="github-icon" />
+<span id="ticketHandle"></span>
+</a>
+</div>
+</div>
+<p class="ticket-serial" id="ticketSerial"></p>
+</article>
+</section>
+</main>
+ <footer>
+      <p> 2026 Coding Conf </p>
+	  <p> Contact us:codingconf26.jm@gmail.com | Tele:(876)678-9087</p>
+    </footer>
+    <script src="../js/ticket.js"></script>
+  </body>
+</html>
